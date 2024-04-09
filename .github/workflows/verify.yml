@@ -14,10 +14,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Build the Docker image
+    - name: Build the container image
       run: docker build . -t my-restful-service
       
-    - name: Run the Docker container
+    - name: Run the container
       run: docker run -d -p 8123:8123 my-restful-service
       
     - name: Test the RESTful service
@@ -29,7 +29,7 @@ jobs:
         response=$(curl http://localhost:8123)
         
         # Check that the response is "Hello world."
-        if [ "$response" == "Hello world." ]; then
+        if [ "$response" == "Hello world!" ]; then
           echo "Test passed!"
         else
           echo "Test failed. Expected 'Hello world.', got '$response'"
