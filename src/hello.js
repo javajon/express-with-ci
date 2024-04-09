@@ -4,7 +4,7 @@ const port = 8123;
 
 // Define a route that returns "hello"
 app.get('/', (req, res) => {
-  res.send('Hello world.');
+  res.send('Hello world!');
 });
 
 // Start the server
